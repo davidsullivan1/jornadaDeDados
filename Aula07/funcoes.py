@@ -19,10 +19,42 @@ def lerCsv(nomeArquivo: str) -> list[dict]:
     return listaItens
 
 
-
-
 pathArquivo = 'vendas.csv'
 arquivoVendas: list[dict]
 arquivoVendas = lerCsv(pathArquivo)
 
+
+def filtrarProdutos(lista: list[dict], situacao: str) -> list[dict]:
+    """Funcao que filtra situacao do produto"""
+    listaFiltrada = []
+    for produto in lista:
+        if produto.get("entregue") == situacao:
+            listaFiltrada.append(produto)
+    return listaFiltrada
+
+
+arquivoFiltrado: list[dict]
+arquivoFiltrado = filtrarProdutos(arquivoVendas, situacao = "False") #Situação
+
+
+
+def somaValoresFiltrados(lista: list[dict]) -> int:
+    soma: int = 0;
+    for produto in lista:
+        soma = soma + int(produto.get("valor"));
+    return soma
+
+
+somaValores: int; 
+somaValores = somaValoresFiltrados(arquivoVendas)
+
+
+# print(arquivoVendas)
 print(arquivoVendas)
+print(f'A soma Total dos produtos é: {somaValores}')
+
+
+
+
+
+
