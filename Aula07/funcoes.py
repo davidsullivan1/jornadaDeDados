@@ -24,4 +24,5 @@ def lerCsv(nomeArquivo: str) -> list[dict]:
 pathArquivo = 'vendas.csv'
 arquivoVendas: list[dict]
 arquivoVendas = lerCsv(pathArquivo)
+
 print(arquivoVendas)
