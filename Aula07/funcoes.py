@@ -53,7 +53,7 @@ somaValores = somaValoresFiltrados(arquivoVendas)
 print(arquivoVendas)
 print(f'A soma Total dos produtos é: {somaValores}')
 
-
+#testando rebase
 
 
 
